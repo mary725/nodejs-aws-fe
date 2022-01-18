@@ -20,6 +20,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import TableBody from "@material-ui/core/TableBody";
 import TableContainer from "@material-ui/core/TableContainer";
+import { getTokenFromHref } from "utils/utils";
 
 const Form = (props: FormikProps<FormikValues>) => {
   const {
@@ -115,7 +116,11 @@ export default function PageOrder() {
       return;
     }
     const promises: any[] = [
-      axios.get(`${API_PATHS.product}/product`),
+      axios.get(`${API_PATHS.product}/product`, {
+        headers: {
+          Authorization: getTokenFromHref(),
+        },
+      }),
       axios.get(`${API_PATHS.order}/order/${id}`)
     ];
     Promise.all(promises)

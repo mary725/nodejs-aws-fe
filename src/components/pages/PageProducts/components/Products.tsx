@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import {Product} from "models/Product";
-import {formatAsPrice} from "utils/utils";
+import { formatAsPrice, getTokenFromHref } from "utils/utils";
 import AddProductToCart from "components/AddProductToCart/AddProductToCart";
 import axios from 'axios';
 import API_PATHS from "constants/apiPaths";
@@ -35,7 +35,11 @@ export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    axios.get(`${API_PATHS.bff}/products`)
+    axios.get(`${API_PATHS.bff}/products`, {
+        headers: {
+          Authorization: getTokenFromHref(),
+        },
+      })
       .then(res => setProducts(res.data));
   }, []);
 

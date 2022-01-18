@@ -53,6 +53,7 @@ provider:
 plugins:
   - serverless-finch
   - serverless-single-page-app-plugin
+  - serverless-dotenv-plugin
 
 custom:
   client:
