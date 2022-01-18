@@ -4,6 +4,8 @@ The static of the React App is uploaded to the S3 bucket.
 [The direct link](http://rs-react-app1.s3-website-us-east-1.amazonaws.com/) to the S3 bucket shows 403 Access Denied error due to policy changes in the bucket. The React App is available only via CloudFront.
 The React App is served now with CloudFront and is available through the Internet over [CloudFront URL](https://d379rlacz383fa.cloudfront.net/).
 
+## To enable cognito, uncomment lines with "ENABLE COGNITO" 
+
 ## Available Scripts
 
 ### Main scripts

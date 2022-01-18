@@ -9,7 +9,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import axios from 'axios';
 import { checkAuth } from './auth';
 
-checkAuth();
+// checkAuth(); // ENABLE COGNITO
 
 axios.interceptors.response.use(
   response => {
