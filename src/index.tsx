@@ -7,6 +7,9 @@ import {Provider} from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import axios from 'axios';
+import { checkAuth } from './auth';
+
+checkAuth();
 
 axios.interceptors.response.use(
   response => {
